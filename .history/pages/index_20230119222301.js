@@ -17,7 +17,7 @@ export default function Home() {
   const [wind, setWind] = useState();
   const [errorMessage, setErrorMessage] = useState('');
   const [icon, setIcon] = useState('');
-  var lang = "en";
+  var lang = "fr,en";
   var units = "metric";
   var apiKey = "8a3b66428312171f7c96dafa7cbc5a31";
 
@@ -29,21 +29,21 @@ export default function Home() {
       axios.get(url)
         .then((response) => {
           console.clear();
-          setData(response.data);
-          console.log(response.data);
-          setWeather(response.data.weather);
+          setData(response.data)
+          console.log(response.data)
+          setWeather(response.data.weather)
           setMain(response.data.main)
-          setWind(response.data.wind);
-          setIcon(response.data.icon);
-          setErrorMessage("");
+          setWind(response.data.wind)
+          setIcon(response.data.icon)
+          setErrorMessage("")
         }).catch(err => {
           console.log(err); 
-          setErrorMessage("Please enter another location");
-          setData({});
-          setWeather();
-          setMain();
-          setWind();
-          setIcon();
+          setErrorMessage("Please enter another location")
+          setData({})
+          setWeather()
+          setMain()
+          setWind()
+          setIcon()
         })
       setLocation('')
     }
@@ -68,8 +68,7 @@ export default function Home() {
         </div>
 
         <div className={styles.errorMess}>{errorMessage}</div>
-  
-        <input id={styles.input}
+        <input
           value={location}
           onChange={event => setLocation(event.target.value)}
           placeholder="Type Your Location"
@@ -78,16 +77,15 @@ export default function Home() {
         >
         </input>
 
-   
-    <div className={styles.searchContainer}></div>
         <div className={styles.weatherData}>
           <div className={styles.weatherCondition}>
             {
               weather && weather.map((w, index) => {
                 return (
                   <div key={index}>
+                    <div className={styles.iconId}>{w.icon}</div>
                     <img className={styles.iconStyle} src={`http://openweathermap.org/img/wn/${w.icon}@2x.png`}></img>
-                   
+                    <div className={styles.weatherMain}>{w.main}</div>
                   </div>
                 )
               })
@@ -98,7 +96,7 @@ export default function Home() {
             weather && weather.map((w, index) => {
               return (
                 <div key={index}>
-                  <div className={styles.description}>{w.description}</div>
+                  <div className={styles.weatherDesc}>Description: {w.description}</div>
                 </div>
               )
             })
@@ -108,10 +106,9 @@ export default function Home() {
             main && weather.map(() => {
               return (
                 <div>
-                  <div className={styles.weatherTemp}> {main.temp}&#176;C</div>
+                  <div className={styles.weatherTemp}>Temperature: {main.temp}&#176;C</div>
                   <div className={styles.weatherFeel}>Feels like: {main.feels_like}&#176;C</div>
                 </div>
-                
               )
             })
           }
@@ -120,7 +117,7 @@ export default function Home() {
             wind && weather.map(() => {
               return (
                 <div>
-                  <div className={styles.weatherWind}>Wind: {wind.gust} m/s</div>
+                  <div className={styles.weatherWind}>Wind gust: {wind.gust} m/s</div>
                 </div>
               )
             })

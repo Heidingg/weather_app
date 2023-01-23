@@ -5,44 +5,26 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-  background-color: lightgoldenrodyellow;
+  background-color: lightskyblue;
 }
 
 .description {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
+  font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  text-transform: capitalize;
+  font-family: var(--font-mono);
   
 }
-.iconStyle{
-  width: 200px;
-  height: 200px;
-}
-.weatherData{
-  text-align: center;
-}
-.weatherTemp{
-  font-size: 50px;
-  margin-top:30px
-}
-.weatherFeel{
-  font-size: 20px;
-margin-top: 20px;
-}
-.weatherWind{
-  font-size: 20px;
 
-}
 .description a {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
- 
 }
 
 .description p {
@@ -99,14 +81,6 @@ margin-top: 20px;
   position: relative;
   padding: 4rem 0;
 }
-#input{
-  margin: 10px;
-border: 3px solid #39998e;
-border-radius: 30px;
-text-align: center;
-width: 70%;
-height: 50px;
-}
 
 .center::before {
   background: var(--secondary-glow);
@@ -148,7 +122,7 @@ height: 50px;
   transform: translateZ(0);
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0px 2px 8px -1px #c9a5a51a;
+  box-shadow: 0px 2px 8px -1px #0000001a;
 }
 
 .thirteen::before,
@@ -313,7 +287,7 @@ div.weatherData {
   align-items: left;
   justify-content: center;
   line-height: 30pt;
-  background-color: #266867;
+  background-color: #f9e0b7;
   padding-top: 3pt;
   padding-bottom: 1rem;
   border-radius: 10pt;

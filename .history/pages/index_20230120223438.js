@@ -32,7 +32,6 @@ export default function Home() {
           setData(response.data);
           console.log(response.data);
           setWeather(response.data.weather);
-          setMain(response.data.main)
           setWind(response.data.wind);
           setIcon(response.data.icon);
           setErrorMessage("");
@@ -68,7 +67,6 @@ export default function Home() {
         </div>
 
         <div className={styles.errorMess}>{errorMessage}</div>
-  
         <input id={styles.input}
           value={location}
           onChange={event => setLocation(event.target.value)}
@@ -77,8 +75,8 @@ export default function Home() {
           type="text"
         >
         </input>
-
-   
+    <button className={styles.Btn}
+    type="submit" onClick={setWeather} > ENTER </button>
     <div className={styles.searchContainer}></div>
         <div className={styles.weatherData}>
           <div className={styles.weatherCondition}>
@@ -86,8 +84,9 @@ export default function Home() {
               weather && weather.map((w, index) => {
                 return (
                   <div key={index}>
+                    <div className>{w.icon}</div>
                     <img className={styles.iconStyle} src={`http://openweathermap.org/img/wn/${w.icon}@2x.png`}></img>
-                   
+                    <div className>{w.main}</div>
                   </div>
                 )
               })
@@ -98,7 +97,7 @@ export default function Home() {
             weather && weather.map((w, index) => {
               return (
                 <div key={index}>
-                  <div className={styles.description}>{w.description}</div>
+                  <div className>{w.description}</div>
                 </div>
               )
             })
@@ -108,10 +107,9 @@ export default function Home() {
             main && weather.map(() => {
               return (
                 <div>
-                  <div className={styles.weatherTemp}> {main.temp}&#176;C</div>
+                  <div className={styles.weatherTemp}>Temperature: {main.temp}&#176;C</div>
                   <div className={styles.weatherFeel}>Feels like: {main.feels_like}&#176;C</div>
                 </div>
-                
               )
             })
           }

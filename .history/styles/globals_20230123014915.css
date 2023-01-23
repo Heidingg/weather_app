@@ -84,7 +84,7 @@
 .input{
   width: 80%;
   display: flex;
-  background-color: light yellowgreen;
+  background-color: #ffdc7d;
 }
 
 .input.input-placeholder{

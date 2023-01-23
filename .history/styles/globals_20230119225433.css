@@ -84,13 +84,13 @@
 .input{
   width: 80%;
   display: flex;
-  background-color: light yellowgreen;
+  background-color: lightblue;
 }
 
 .input.input-placeholder{
   outline: none;
     padding: 0.4em 1em;
-    color: lightseagreen;
+    color: black;
     font-family: inherit;
     font-size: 22px;
     width: 520px;

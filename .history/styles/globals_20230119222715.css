@@ -78,33 +78,16 @@
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 20pt;
-}
-
-.input{
-  width: 80%;
-  display: flex;
-  background-color: light yellowgreen;
-}
-
-.input.input-placeholder{
-  outline: none;
-    padding: 0.4em 1em;
-    color: lightseagreen;
-    font-family: inherit;
-    font-size: 22px;
-    width: 520px;
-    height: 43px;
+  font-size: 16pt;
 }
 
 html,
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-  background-blend-mode: multiply,multiply;
+  max-width: 100vw;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;;
 }
 
 body {
